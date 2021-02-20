@@ -1,0 +1,133 @@
+server.servlet.application-display-name: cookie-problem-reproduce
+
+spring.main.web-application-type: REACTIVE
+server.port: 8080
+server.servlet.context-path: /
+
+spring.reactor.debug-agent.enabled: true
+
+################################################################################
+# Web properties
+
+spring.web.locale: en
+spring.web.locale-resolver: fixed
+spring.web.resources.add-mappings: true
+spring.web.resources.cache.cachecontrol.cache-private: true
+spring.web.resources.cache.cachecontrol.cache-public: false
+spring.web.resources.cache.cachecontrol.no-cache: true
+spring.web.resources.cache.cachecontrol.no-store: false
+spring.web.resources.cache.cachecontrol.no-transform: true
+spring.web.resources.cache.cachecontrol.must-revalidate: true
+spring.web.resources.cache.cachecontrol.proxy-revalidate: false
+spring.web.resources.cache.cachecontrol.max-age: 1d
+spring.web.resources.cache.cachecontrol.s-max-age: 0
+spring.web.resources.cache.cachecontrol.stale-if-error: 0
+spring.web.resources.cache.cachecontrol.stale-while-revalidate: 0
+spring.web.resources.cache.period: 0
+spring.web.resources.chain.cache: true
+spring.web.resources.chain.compressed: true
+# spring.web.resources.chain.enabled:
+spring.web.resources.chain.strategy.content.enabled: false
+# spring.web.resources.chain.strategy.content.paths: [/**]
+spring.web.resources.chain.strategy.fixed.enabled: false
+# spring.web.resources.chain.strategy.fixed.paths: [/**]
+# spring.web.resources.chain.strategy.fixed.version:
+spring.web.resources.static-locations:
+    - "classpath:/static/"
+spring.servlet.multipart.enabled: true
+# spring.servlet.multipart.file-size-threshold: 0B
+# spring.servlet.multipart.location:
+# spring.servlet.multipart.max-file-size: 1MB
+spring.servlet.multipart.max-request-size: 10MB
+spring.servlet.multipart.resolve-lazily: false
+spring.webflux.base-path: /
+# spring.webflux.format.date:
+# spring.webflux.format.date-time:
+# spring.webflux.format.time:
+spring.webflux.hiddenmethod.filter.enabled: false
+spring.webflux.static-path-pattern: /assets/**
+
+# Web properties
+################################################################################
+
+################################################################################
+# Server properties
+
+# server.address:
+server.compression.enabled: true
+# server.compression.excluded-user-agents
+# server.compression.mime-types: [text/html, text/xml, text/plain, text/css, text/javascript, application/javascript, application/json, application/xml]
+# server.compression.min-response-size: 2KB
+# server.error.include-binding-errors: never
+# server.error.include-exception: false
+# server.error.include-message: never
+# server.error.include-stacktrace: never
+# server.error.path: /error
+server.error.whitelabel.enabled: false
+server.forward-headers-strategy: NATIVE
+server.http2.enabled: false
+server.max-http-header-size: 8KB
+server.netty.connection-timeout: 30s
+# server.netty.h2c-max-content-length: 0B
+# server.netty.initial-buffer-size: 128B
+# server.netty.max-chunk-size: 8KB
+# server.netty.max-initial-line-length: 4KB
+# server.netty.validate-headers: true
+# server.server-header:
+# server.servlet.context-parameters.*:
+# server.servlet.encoding.charset:
+# server.servlet.encoding.enabled: true
+# server.servlet.encoding.force:
+# server.servlet.encoding.force-request:
+# server.servlet.encoding.force-response:
+# server.servlet.encoding.mapping.*:
+# server.servlet.jsp.class-name:
+#  server.servlet.jsp.init-parameters.*:
+server.servlet.jsp.registered: false
+# server.servlet.register-default-servlet: true
+# server.servlet.session.cookie.comment:
+# server.servlet.session.cookie.domain:
+server.servlet.session.cookie.http-only: true
+server.servlet.session.cookie.max-age: 1h
+# server.servlet.session.cookie.name:
+# server.servlet.session.cookie.path:
+server.servlet.session.cookie.secure: false
+server.servlet.session.persistent: false
+# server.servlet.session.store-dir:
+server.servlet.session.timeout: 1h
+# server.servlet.session.tracking-modes:
+server.shutdown: graceful
+# server.ssl.ciphers:
+# server.ssl.client-auth:
+# server.ssl.enabled: true
+# server.ssl.enabled-protocols:
+# server.ssl.key-alias:
+# server.ssl.key-password:
+# server.ssl.key-store:
+# server.ssl.key-store-password:
+# server.ssl.key-store-provider:
+# server.ssl.key-store-type:
+# server.ssl.protocol: TLS
+# server.ssl.trust-store:
+# server.ssl.trust-store-password:
+# server.ssl.trust-store-provider:
+# server.ssl.trust-store-type:
+
+# Server properties
+################################################################################
+
+################################################################################
+# Security properties
+
+spring.security.filter.dispatcher-types: [ async, error, request ]
+spring.security.filter.order: -100.0
+# spring.security.user.name: user
+# spring.security.user.password:
+# spring.security.user.roles:
+spring.session.servlet.filter-dispatcher-types: [ async, error, request ]
+# spring.session.servlet.filter-order:
+spring.session.store-type: NONE
+spring.session.timeout: 1h
+
+# Security properties
+################################################################################
