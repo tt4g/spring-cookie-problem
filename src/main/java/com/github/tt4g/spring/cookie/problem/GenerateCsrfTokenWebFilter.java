@@ -15,17 +15,20 @@ public class GenerateCsrfTokenWebFilter implements WebFilter {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
-        exchange.getResponse().beforeCommit(() -> {
-            Mono<CsrfToken> csrfToken = exchange.getAttribute(CsrfToken.class.getName());
-
-            if (csrfToken != null) {
-                return csrfToken.then();
-            } else {
-                return Mono.empty();
-            }
-        });
+        exchange.getResponse().beforeCommit(() ->
+            Mono.defer(() -> this.subscribeCsrfToken(exchange)));
 
         return chain.filter(exchange);
+    }
+
+    private Mono<Void> subscribeCsrfToken(ServerWebExchange exchange) {
+        Mono<CsrfToken> csrfToken = exchange.getAttribute(CsrfToken.class.getName());
+
+        if (csrfToken != null) {
+            return csrfToken.then();
+        } else {
+            return Mono.empty();
+        }
     }
 
 }
